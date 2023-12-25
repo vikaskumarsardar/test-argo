@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: first-balancer
+spec:
+  selector:
+    app: first-service
+  ports:
+    - protocol: TCP
+      port: 6789
+      targetPort: 3456 # Use the port specified in your Node.js application
+  type: LoadBalancer
