@@ -20,4 +20,4 @@ jobs:
 
     - name: Deploy to EC2
       run: |
-        ssh -o StrictHostKeyChecking=no ubuntu@ec2-15-207-232-65.ap-south-1.compute.amazonaws.com 'cd argodada && echo "you have done it man" > something.txt'
+        ssh -o StrictHostKeyChecking=no ubuntu@ec2-15-207-232-65.ap-south-1.compute.amazonaws.com 'cd argodada/test-argo && git pull origin main'
