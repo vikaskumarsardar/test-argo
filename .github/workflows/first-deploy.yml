@@ -20,4 +20,4 @@ jobs:
 
     - name: Deploy to EC2
       run: |
-        ssh -o StrictHostKeyChecking=no -i ${{ secrets.EC2_SSH_PRIVATE_KEY }} ubuntu@ec2-15-207-232-65.ap-south-1.compute.amazonaws.com 'cd argodada && git pull origin main'
+        echo ${{ secrets.EC2_SSH_PRIVATE_KEY }} | ssh -o StrictHostKeyChecking=no -i /dev/stdin ubuntu@ec2-15-207-232-65.ap-south-1.compute.amazonaws.com 'cd argodada && git pull origin main'
