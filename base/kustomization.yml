@@ -5,3 +5,10 @@ kind: Kustomization
 resources:
 - deployment.yml
 - service.yml
+
+commonLabels:
+  app: my-kustomize-app
+namePrefix:
+  kustom-
+# nameSuffix:
+#   -v1    

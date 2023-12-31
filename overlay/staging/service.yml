@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: stage-balancer
 spec:
-  selector:
-    app: stage-app
   ports:
-    - protocol: TCP
+    - name: tcp-port-updated
+      protocol: TCP
       port: 8000
-      targetPort: 3456 # Use the port specified in your Node.js application
+      targetPort: 3456
   type: LoadBalancer

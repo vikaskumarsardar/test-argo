@@ -5,13 +5,21 @@ kind: Kustomization
 resources:
 - ../../base
 
+namespace: stage
+
+commonLabels:
+  stage: stage
+  app: my-customize-app-stage
+nameSuffix:
+  -stage
+
 patches:
 - target:
     kind: Deployment
-    name: dev-deployment
-  patch: deployment.yml
+    name: my-app
+  path: deployment.yml
 
-- target:
-    kind: Service
-    name: dev-balancer
-  patch: service.yml
+# - target:
+#     kind: Service
+#     name: myapp-service
+#   path: service.yml

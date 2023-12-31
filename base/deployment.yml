@@ -1,19 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dev-deployment
+  name: my-app
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app: dev-app
   template:
-    metadata:
-      labels:
-        app: dev-app
     spec:
       containers:
-      - name: dev-app
+      - name: my-app
         image: vikaskumarsardar/new-service:eta
         ports:
         - containerPort: 3456
