@@ -1,5 +1,5 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: stage-deployment
-  # newName: stage-deployment  # New name
+  name: dev-deployment
+  newName: stage-deployment
