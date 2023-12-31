@@ -24,11 +24,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: staging-dev
-  namespace: argocd
+  # namespace: argocd
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
-    # namespace: staging
+    namespace: staging
   source:
     repoURL: https://github.com/vikaskumarsardar/test-argo.git
     targetRevision: main
