@@ -6,5 +6,5 @@ bases:
 - ../../base
 
 patchesStrategicMerge:
-- patch.yml
+- deployment.yml
 - service.yml
