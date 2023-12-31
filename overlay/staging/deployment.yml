@@ -2,4 +2,5 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dev-deployment
-  newName: stage-deployment
+spec:
+  replicas: 2
