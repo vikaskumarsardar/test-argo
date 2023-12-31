@@ -28,7 +28,6 @@ metadata:
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: staging
   source:
     repoURL: https://github.com/vikaskumarsardar/test-argo.git
     targetRevision: main
@@ -51,7 +50,6 @@ metadata:
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: prod
   source:
     repoURL: https://github.com/vikaskumarsardar/test-argo.git
     targetRevision: main
