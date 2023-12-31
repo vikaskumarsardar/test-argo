@@ -24,6 +24,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: staging-dev
+  namespace: argocd
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
@@ -46,6 +47,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: prod-dev
+  namespace: argocd
 spec:
   destination:
     server: 'https://kubernetes.default.svc'
