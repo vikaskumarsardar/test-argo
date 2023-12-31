@@ -1,20 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp-prod
+  name: myapp-argo-application
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/your-username/my-app-repo.git
-    targetRevision: prod
-    path: prod
+    repoURL: https://github.com/vikaskumarsardar/test-argo.git
+    targetRevision: HEAD
+    path: dev
   destination:
     server: https://kubernetes.default.svc
-    namespace: myapp-prod
+    namespace: myapp
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
+    - CreateNamespace=true  
     automated:
       selfHeal: true
       prune: true
+    
