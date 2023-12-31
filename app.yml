@@ -1,3 +1,25 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: dev-app
+# spec:
+#   destination:
+#     server: 'https://kubernetes.default.svc'
+#     namespace: dev
+#   source:
+#     repoURL: https://github.com/vikaskumarsardar/test-argo.git
+#     targetRevision: main
+#     path: overlays/dev
+#   project: default
+#   syncPolicy:
+#     syncOptions:
+#     - CreateNamespace=true  
+#     automated:
+#       selfHeal: true
+#       prune: true
+
+# ---
+
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -9,7 +31,7 @@ spec:
   source:
     repoURL: https://github.com/vikaskumarsardar/test-argo.git
     targetRevision: main
-    path: overlays/staging
+    path: overlay/staging
   project: default
   syncPolicy:
     syncOptions:
@@ -17,6 +39,7 @@ spec:
     automated:
       selfHeal: true
       prune: true
+
 ---
 
 apiVersion: argoproj.io/v1alpha1
@@ -30,7 +53,7 @@ spec:
   source:
     repoURL: https://github.com/vikaskumarsardar/test-argo.git
     targetRevision: main
-    path: overlays/dev
+    path: overlay/prod
   project: default
   syncPolicy:
     syncOptions:
