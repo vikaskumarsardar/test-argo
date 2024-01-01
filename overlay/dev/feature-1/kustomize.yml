@@ -5,5 +5,22 @@ kind: Kustomization
 bases:
 - ../../../base
 
-patchesStrategicMerge:
-- service.yml
+namespace: feature-1
+
+commonLabels:
+  stage: feature-1
+
+patches:
+- target:
+    kind: Deployment
+    name: my-app
+  path: deployment.yml
+
+- target:
+    kind: Service
+    name: myapp-service
+  # path: service.yml
+  patch: |-
+      - op: replace
+        path: /spec/ports/0/port
+        value: 7000
