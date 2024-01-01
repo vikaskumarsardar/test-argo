@@ -9,9 +9,9 @@ namespace: stage
 
 commonLabels:
   stage: stage
-  app: my-customize-app-stage
-nameSuffix:
-  -stage
+#   app: my-customize-app-stage
+# nameSuffix:
+  # -stage
 
 patches:
 - target:
