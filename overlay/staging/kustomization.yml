@@ -19,7 +19,11 @@ patches:
     name: my-app
   path: deployment.yml
 
-# - target:
-#     kind: Service
-#     name: myapp-service
-#   path: service.yml
+- target:
+    kind: Service
+    name: myapp-service
+  # path: service.yml
+  patch: |-
+      - op: replace
+        path: /spec/ports/0/port
+        value: 8000
